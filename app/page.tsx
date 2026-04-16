@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import { useAuth } from "@/lib/context/AuthContext";
 import { useRouter } from "next/navigation";
@@ -26,15 +27,34 @@ export default function LoginPage() {
         <h1 className="text-2xl font-bold mb-6 text-center">Padelclass</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label className="block text-gray-700">Usuario</label>
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full p-2 border rounded" placeholder="tu@email.com" />
+            <label className="block text-gray-700">Usuario (email)</label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full p-2 border rounded"
+              placeholder="tu@email.com"
+              required
+            />
           </div>
           <div className="mb-6">
             <label className="block text-gray-700">Contraseña</label>
-            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="w-full p-2 border rounded" placeholder="••••••••" />
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full p-2 border rounded"
+              placeholder="••••••••"
+              required
+            />
           </div>
           {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
-          <button type="submit" className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700">Entrar</button>
+          <button
+            type="submit"
+            className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700"
+          >
+            Entrar
+          </button>
         </form>
       </div>
     </div>
