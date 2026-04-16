@@ -17,12 +17,12 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <p className="text-gray-500">Cargando...</p>
+        <p>Cargando...</p>
       </div>
     );
   }
 
-  if (!user) return null; // Evita renderizar mientras redirige
+  if (!user) return null;
 
   return (
     <div>
