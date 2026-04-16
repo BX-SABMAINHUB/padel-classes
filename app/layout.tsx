@@ -1,14 +1,19 @@
-import { AuthProvider } from "@/lib/context/AuthContext";
+import type { Metadata } from "next";
 import "./globals.css";
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export const metadata: Metadata = {
+  title: "Padelclass",
+  description: "Plataforma educativa tipo ManageBac",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="es">
-      <body>
-        <AuthProvider>
-          {children}
-        </AuthProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
